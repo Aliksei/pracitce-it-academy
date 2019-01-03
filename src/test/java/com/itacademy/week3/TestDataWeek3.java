@@ -2,10 +2,10 @@ package com.itacademy.week3;
 
 import com.itcademy.week3.entity.Tree;
 
-public class BaseTestForWeek3 {
+public class TestDataWeek3 {
 
-    protected static Tree<Integer> TEST_TREE = new Tree<>(40);
-    protected static Tree<String> TEST_STING_TREE = new Tree<>("J");
+    public static final Tree<Integer> TEST_TREE = new Tree<>(40);
+    public static final Tree<String> TEST_STING_TREE = new Tree<>("J");
 
     static {
         TEST_TREE.insert(20);

@@ -1,9 +1,14 @@
 package com.itcademy.week3.task1.service;
 
 import com.itcademy.week3.entity.Tree;
+import java.util.Deque;
 import java.util.Stack;
 
 public class BinaryTreeNodesCounter {
+
+    /**
+     * recursive method is in Tree entity , see method count() {@link Tree}
+     */
 
     public static int countNodes(final Tree<?> tree) {
         Stack<Tree> nodes = new Stack<>();
