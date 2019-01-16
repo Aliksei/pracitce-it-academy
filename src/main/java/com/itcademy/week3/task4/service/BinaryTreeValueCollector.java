@@ -1,18 +1,18 @@
 package com.itcademy.week3.task4.service;
 
-import com.itcademy.week3.entity.Tree;
+import com.itcademy.common.entity.TreeNode;
 import java.util.LinkedList;
 import java.util.Queue;
 
 public class BinaryTreeValueCollector {
 
-    public static String collectByBreadth(final Tree tree) {
-        Queue<Tree> queue = new LinkedList<>();
+    public static String collectByBreadth(final TreeNode tree) {
+        Queue<TreeNode> queue = new LinkedList<>();
         queue.add(tree);
         StringBuilder sb = new StringBuilder();
         while (!queue.isEmpty()) {
-            Tree node = queue.poll();
-            sb.append(node.getValue());
+            TreeNode node = queue.poll();
+            sb.append(node.getValue()).append(" ");
             if (node.getLeft() != null) {
                 queue.add(node.getLeft());
             }

@@ -1,11 +1,11 @@
 package com.itacademy.week3;
 
-import com.itcademy.week3.entity.Tree;
+import com.itcademy.common.entity.TreeNode;
 
 public class TestDataWeek3 {
 
-    public static final Tree<Integer> TEST_TREE = new Tree<>(40);
-    public static final Tree<String> TEST_STING_TREE = new Tree<>("J");
+    public static final TreeNode<Integer> TEST_TREE = new TreeNode<>(40);
+    public static final TreeNode<String> TEST_STING_TREE = new TreeNode<>("J");
 
     static {
         TEST_TREE.insert(20);

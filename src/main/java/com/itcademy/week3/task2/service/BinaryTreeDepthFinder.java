@@ -1,11 +1,11 @@
 package com.itcademy.week3.task2.service;
 
 
-import com.itcademy.week3.entity.Tree;
+import com.itcademy.common.entity.TreeNode;
 
 public class BinaryTreeDepthFinder {
 
-    public static int maxDepth(Tree tree) {
+    public static int maxDepth(TreeNode tree) {
         if (tree == null) {
             return 0;
         }

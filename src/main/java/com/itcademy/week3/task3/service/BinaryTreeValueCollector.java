@@ -1,18 +1,18 @@
 package com.itcademy.week3.task3.service;
 
-import com.itcademy.week3.entity.Tree;
+import com.itcademy.common.entity.TreeNode;
 import java.util.Stack;
 
 @SuppressWarnings({"Duplicates", "unchecked"})
 public class BinaryTreeValueCollector {
 
-    public static String collectByPreOrderTraverse(final Tree tree) {
-        Stack<Tree> nodes = new Stack<>();
+    public static String collectByPreOrderTraverse(final TreeNode tree) {
+        Stack<TreeNode> nodes = new Stack<>();
         StringBuilder stringBuilder = new StringBuilder();
         nodes.push(tree);
         while (!nodes.empty()) {
-            Tree current = nodes.pop();
-            stringBuilder.append(current.getValue());
+            TreeNode current = nodes.pop();
+            stringBuilder.append(current.getValue() + " ");
             if (current.getRight() != null) {
                 nodes.push(current.getRight());
             }
@@ -23,17 +23,17 @@ public class BinaryTreeValueCollector {
         return stringBuilder.toString();
     }
 
-    public static String collectByInOrderTraverse(final Tree tree) {
-        Stack<Tree> nodes = new Stack<>();
+    public static String collectByInOrderTraverse(final TreeNode tree) {
+        Stack<TreeNode> nodes = new Stack<>();
         StringBuilder stringBuilder = new StringBuilder();
 
-        Tree rootTree = tree;
+        TreeNode rootTree = tree;
         while (!nodes.isEmpty() || rootTree != null) {
             if (rootTree != null) {
                 nodes.push(rootTree);
                 rootTree = rootTree.getLeft();
             } else {
-                Tree node = nodes.pop();
+                TreeNode node = nodes.pop();
                 stringBuilder.append(node.getValue());
                 rootTree = node.getRight();
             }
@@ -41,13 +41,13 @@ public class BinaryTreeValueCollector {
         return stringBuilder.toString();
     }
 
-    public static <T extends Comparable> String collectByPostOrderTraverse(final Tree<T> tree) {
+    public static <T> String collectByPostOrderTraverse(final TreeNode<?> tree) {
         StringBuilder stringBuilder = new StringBuilder();
-        Stack<Tree> stack = new Stack<>();
+        Stack<TreeNode> stack = new Stack<>();
         stack.push(tree);
         Stack<T> out = new Stack<>();
         while (!stack.empty()) {
-            Tree curr = stack.pop();
+            TreeNode curr = stack.pop();
             out.push((T) curr.getValue());
             if (curr.getLeft() != null) {
                 stack.push(curr.getLeft());

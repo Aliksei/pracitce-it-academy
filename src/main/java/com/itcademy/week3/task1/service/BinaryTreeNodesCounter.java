@@ -1,22 +1,21 @@
 package com.itcademy.week3.task1.service;
 
-import com.itcademy.week3.entity.Tree;
-import java.util.Deque;
+import com.itcademy.common.entity.TreeNode;
 import java.util.Stack;
 
 public class BinaryTreeNodesCounter {
 
     /**
-     * recursive method is in Tree entity , see method count() {@link Tree}
+     * recursive method is in Tree entity , see method count() {@link TreeNode}
      */
 
-    public static int countNodes(final Tree<?> tree) {
-        Stack<Tree> nodes = new Stack<>();
+    public static int countNodes(final TreeNode<?> tree) {
+        Stack<TreeNode> nodes = new Stack<>();
         nodes.push(tree);
         int count = 0;
         while (!nodes.empty()) {
             count++;
-            Tree current = nodes.pop();
+            TreeNode current = nodes.pop();
             if (current.getRight() != null) {
                 nodes.push(current.getRight());
             }
